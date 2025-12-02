@@ -1,0 +1,504 @@
+/* ============================================
+   HOME PAGE STYLES
+   ============================================ */
+
+/* Main Container */
+.home-container {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  background: linear-gradient(
+    135deg,
+    var(--light-green) 0%,
+    var(--light-pink) 100%
+  );
+  position: relative;
+}
+
+/* Content Wrapper */
+.home-content {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+
+/* Page Title */
+.page-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 0;
+  line-height: 1.3;
+}
+
+/* Decorative Cat (Top Right of Message Display) */
+.cat-decoration {
+  position: absolute;
+  top: -10px;
+  right: -15px;
+  z-index: 15;
+}
+
+.cat-small {
+  width: 90px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px var(--shadow-light));
+}
+
+/* ============================================
+   MAIN MESSAGE CARD
+   ============================================ */
+
+.message-card {
+  background-color: var(--light-pink);
+  padding: 2rem 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Message Display Area (Green Card Inside Pink Card) */
+.message-display {
+  background-color: var(--dark-green);
+  padding: 2rem 1.5rem;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 20px;
+  border: 4px dashed var(--dark-pink-text);
+  position: relative;
+}
+
+.message-text {
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin: 0;
+  position: relative;
+  z-index: 5;
+}
+
+/* Capybara Decoration (Bottom Left, Beside Button) */
+.capybara-decoration {
+  position: absolute;
+  bottom: -45px;
+  left: -50px;
+  z-index: 12;
+}
+
+.capybara-small {
+  width: 140px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px var(--shadow-light));
+}
+
+/* Generate Message Button */
+.generate-btn {
+  width: auto;
+  max-width: 220px;
+  align-self: flex-end;
+  margin-right: 15px;
+  font-size: 1.3rem;
+  padding: 0.9rem 1.8rem;
+  margin-bottom: 10px;
+  background-color: var(--dark-pink);
+}
+
+.generate-btn:active {
+  transform: scale(0.97);
+}
+
+/* ============================================
+   EXTRA COMFORT SECTION
+   ============================================ */
+
+.comfort-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.comfort-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-align: center;
+  margin: 0;
+}
+
+/* Button and Fox Wrapper */
+.comfort-section > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+/* Fox Decoration (Beside Comfort Button) */
+.fox-decoration {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.fox-small {
+  width: 80px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px var(--shadow-light));
+  transition: transform 0.2s ease;
+}
+
+.fox-decoration:active .fox-small {
+  transform: scale(0.95);
+}
+
+/* Fox Speech Bubble */
+.fox-bubble {
+  background-color: var(--light-pink);
+  color: var(--text-dark);
+  padding: 0.6rem 1rem;
+  border: 2px solid var(--text-dark);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  animation: bubble-bounce 2s ease-in-out infinite;
+  position: relative;
+}
+
+/* Bubble tail/pointer */
+.fox-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid var(--light-pink);
+}
+
+/* Bubble pointer border */
+.fox-bubble::before {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 11px solid var(--text-dark);
+}
+
+/* Bubble animation */
+@keyframes bubble-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Comfort Button */
+.comfort-btn {
+  font-size: 1.4rem;
+  padding: 0.9rem 2.5rem;
+  margin-right: 0px;
+  display: inline-block;
+}
+
+.comfort-btn:active {
+  transform: scale(0.97);
+}
+
+/* ============================================
+   COMFORT MODE MODAL
+   ============================================ */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(43, 58, 58, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.modal.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-out;
+  padding: 1rem;
+}
+
+.modal.closing {
+  animation: fadeOut 0.3s ease-out;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: var(--dark-green);
+  max-width: 90%;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  position: relative;
+  animation: fadeIn 0.4s ease-out;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  text-align: center;
+  margin: 0;
+}
+
+.modal-fox {
+  margin: 0.5rem 0;
+}
+
+.fox-modal-img {
+  width: 90px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px var(--shadow-light));
+}
+
+/* Comfort Message Display (Pink Card Inside Modal) */
+.comfort-message-display {
+  background-color: var(--light-pink);
+  border: 3px dashed var(--dark-pink-text);
+  border-radius: 20px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  min-height: 200px;
+}
+
+.comfort-text-content {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin: 0;
+  position: relative;
+  z-index: 5;
+}
+
+/* Modal Fox Decoration (Top Left) */
+.modal-fox-decoration {
+  position: absolute;
+  top: -2.5rem;
+  left: -1.5rem;
+  z-index: 15;
+}
+
+.fox-modal-img {
+  width: 90px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px var(--shadow-light));
+}
+
+/* Modal Cat Decoration (Bottom Right) */
+.modal-cat-decoration {
+  position: absolute;
+  bottom: -30px;
+  right: -1rem;
+  z-index: 12;
+}
+
+.cat-modal-img {
+  width: 70px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px var(--shadow-light));
+}
+
+/* Close Modal Button */
+.close-modal-btn {
+  width: 100%;
+  font-size: 1.4rem;
+  padding: 0.9rem 2rem;
+}
+
+.close-modal-btn:active {
+  transform: scale(0.97);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE OPTIMIZATIONS
+   ============================================ */
+
+/* Mobile phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.7rem;
+  }
+
+  .cat-decoration {
+    top: -4.5rem;
+    right: -1rem;
+  }
+
+  .cat-small {
+    width: 8.75rem;
+  }
+
+  .message-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .message-display {
+    padding: 1.5rem 1rem;
+    min-height: 160px;
+    border-radius: 15px;
+  }
+
+  .message-text {
+    font-size: 1.2rem;
+  }
+
+  .capybara-small {
+    width: 8rem;
+  }
+
+  .capybara-decoration {
+    bottom: -0.6rem;
+    left: 0.3rem;
+  }
+
+  .generate-btn {
+    max-width: 180px;
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+    margin-right: 10px;
+  }
+
+  .comfort-text {
+    font-size: 1.1rem;
+  }
+
+  .fox-small {
+    width: 6.5rem;
+  }
+
+  .fox-decoration {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .fox-bubble {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.9rem;
+    margin-bottom: -1.5rem;
+    right: -1rem;
+  }
+
+  .comfort-btn {
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    margin-right: 0px;
+    display: inline-block;
+  }
+
+  /* Modal adjustments */
+  .modal-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
+  .fox-modal-img {
+    width: 4.5rem;
+  }
+
+  .comfort-message-display {
+    min-height: 180px;
+    padding: 1.5rem 1rem;
+  }
+
+  .comfort-text-content {
+    font-size: 1.3rem;
+  }
+
+  .cat-modal-img {
+    width: 3.75rem;
+  }
+
+  .modal-cat {
+    bottom: 120px;
+  }
+}
+
+/* ============================================
+   LOADING STATE
+   ============================================ */
+
+.generate-btn.loading,
+.comfort-btn.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.generate-btn.loading::after,
+.comfort-btn.loading::after {
+  content: "...";
+  animation: dots 1s steps(3, end) infinite;
+}
+
+@keyframes dots {
+  0%,
+  20% {
+    content: ".";
+  }
+  40% {
+    content: "..";
+  }
+  60%,
+  100% {
+    content: "...";
+  }
+}

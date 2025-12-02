@@ -1,0 +1,171 @@
+/* Full-height container with gradient background */
+.landing-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(
+    135deg,
+    var(--light-green) 0%,
+    var(--light-pink) 100%
+  );
+}
+
+/* Content wrapper - centers everything */
+.landing-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Welcome text styling */
+.welcome-text {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--dark-green-text);
+  text-align: center;
+  margin-bottom: 0;
+  letter-spacing: -1px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Illustration wrapper with animation */
+.illustration-wrapper {
+  width: 100%;
+  max-width: 300px;
+  margin: 1rem 0;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.cat-illustration {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 20px var(--shadow-medium));
+}
+
+/* Enter button with special styling */
+.enter-btn {
+  margin-top: 1rem;
+  font-size: 2rem;
+  padding: 1rem 3rem;
+  animation: fadeIn 1s ease-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button hover effect - disabled on mobile, enabled on desktop */
+@media (hover: hover) {
+  .enter-btn:hover {
+    background-color: var(--dark-pink);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--shadow-medium);
+  }
+}
+
+.enter-btn:active {
+  transform: scale(0.98);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE OPTIMIZATIONS
+   ============================================ */
+
+/* Extra small phones (320px - 375px) */
+@media (max-width: 375px) {
+  .welcome-text {
+    font-size: 2.8rem;
+  }
+
+  .illustration-wrapper {
+    max-width: 250px;
+  }
+
+  .enter-btn {
+    font-size: 1.6rem;
+    padding: 1rem 2.5rem;
+  }
+}
+
+/* Small phones (376px - 480px) */
+@media (min-width: 376px) and (max-width: 480px) {
+  .welcome-text {
+    font-size: 3rem;
+  }
+
+  .illustration-wrapper {
+    max-width: 280px;
+  }
+}
+
+/* Medium phones (481px - 600px) */
+@media (min-width: 481px) and (max-width: 600px) {
+  .welcome-text {
+    font-size: 3.5rem;
+  }
+
+  .illustration-wrapper {
+    max-width: 320px;
+  }
+
+  .enter-btn {
+    font-size: 2.2rem;
+    padding: 1.3rem 4rem;
+  }
+}
+
+/* Landscape mode optimization */
+@media (max-height: 600px) and (orientation: landscape) {
+  .landing-container {
+    padding: 1rem;
+  }
+
+  .landing-content {
+    gap: 1rem;
+  }
+
+  .welcome-text {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+  }
+
+  .illustration-wrapper {
+    max-width: 200px;
+    margin: 0.5rem 0;
+  }
+
+  .enter-btn {
+    font-size: 1.5rem;
+    padding: 0.8rem 2.5rem;
+    margin-top: 0.5rem;
+  }
+}
+
+/* ============================================
+   ANIMATION REFINEMENTS
+   ============================================ */
+
+/* Delay animations for smooth entrance */
+.landing-content > * {
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.welcome-text {
+  animation: fadeIn 0.8s ease-out 0.1s forwards;
+}
+
+.illustration-wrapper {
+  animation: fadeIn 0.8s ease-out 0.3s forwards,
+    bounce 2s ease-in-out 1s infinite;
+}
+
+.enter-btn {
+  animation: fadeIn 0.8s ease-out 0.6s forwards;
+}

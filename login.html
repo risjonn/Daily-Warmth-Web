@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Login to Daily Comfort" />
+    <title>Login 💚</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Caveat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-content">
+        <!-- Login Card -->
+        <div class="login-card card card-green fade-in">
+          <!-- Title -->
+          <h2 class="login-title">Enter Our Secret Code</h2>
+
+          <!-- Fox Illustration 1 (Top) -->
+          <div class="fox-top">
+            <img
+              src="assets/images/fox2.svg"
+              alt="Cute fox"
+              class="illustration-small"
+            />
+          </div>
+
+          <!-- Login Form -->
+          <form id="loginForm" class="login-form">
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="pinInput"
+                placeholder="Hint: The day I asked you to be my girlfriend"
+                maxlength="8"
+                required
+                autocomplete="off"
+              />
+            </div>
+
+            <!-- Fox Illustration 2 (Bottom) -->
+            <div class="fox-bottom">
+              <img
+                src="assets/images/fox4.svg"
+                alt="Cute fox sitting"
+                class="illustration-small"
+              />
+            </div>
+
+            <!-- Login Button -->
+            <button type="submit" class="btn btn-pink login-btn">Login</button>
+
+            <!-- Error Message (Hidden by default) -->
+            <div id="errorMessage" class="error-message hidden">
+              <p>Oops! That's not the right code. Try again! 🦊</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/auth.js"></script>
+  </body>
+</html>

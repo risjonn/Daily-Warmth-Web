@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your daily comfort message" />
+    <title>Daily Comfort 💚</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Caveat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/home.css" />
+  </head>
+  <body>
+    <div class="home-container gradient-bg">
+      <div class="home-content">
+        <!-- Page Title -->
+        <h1 class="page-title fade-in">Your Message<br />of the Day</h1>
+
+        <!-- Main Message Card -->
+        <div class="message-card card card-pink fade-in">
+          <!-- Inner Message Display Area -->
+          <div class="message-display card-green">
+            <p id="dailyMessage" class="message-text text-cute">
+              Loading your message...
+            </p>
+          </div>
+
+          <!-- Decorative Cat (top right) -->
+          <div class="cat-decoration">
+            <img
+              src="assets/images/blackcat3.svg"
+              alt="Cute black cat"
+              class="cat-small"
+            />
+          </div>
+
+          <!-- Decorative Capybara (bottom left) -->
+          <div class="capybara-decoration">
+            <img
+              src="assets/images/capybara1.svg"
+              alt="Cute capybara"
+              class="capybara-small"
+            />
+          </div>
+
+          <!-- Generate Message Button -->
+          <button class="btn btn-pink generate-btn" id="generateBtn">
+            Generate Message
+          </button>
+        </div>
+
+        <!-- Extra Comfort Section -->
+        <div class="comfort-section fade-in">
+          <p class="comfort-text">
+            Need an extra comfort today? Click that cute foxxyy
+          </p>
+
+          <!-- Fox Illustration (Clickable) -->
+          <div class="fox-decoration" id="foxClickable">
+            <!-- Speech Bubble -->
+            <div class="fox-bubble">Click me!</div>
+            <img
+              src="assets/images/fox3.svg"
+              alt="Cute fox"
+              class="fox-small"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comfort Mode Modal (Hidden by default) -->
+    <div id="comfortModal" class="modal">
+      <div class="modal-content card card-green">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h2 class="modal-title">My Cinta...</h2>
+        </div>
+
+        <!-- Comfort Message Display -->
+        <div class="comfort-message-display card-pink">
+          <!-- Fox Illustration (Top Left) -->
+          <div class="modal-fox-decoration">
+            <img
+              src="assets/images/fox1.svg"
+              alt="Cute fox"
+              class="fox-modal-img"
+            />
+          </div>
+
+          <p id="comfortMessage" class="comfort-text-content text-cute">
+            Loading comfort message...
+          </p>
+
+          <!-- Modal Cat Decoration (Bottom Right) -->
+          <div class="modal-cat-decoration">
+            <img
+              src="assets/images/blackcat1.svg"
+              alt="Cute black cat"
+              class="cat-modal-img"
+            />
+          </div>
+        </div>
+
+        <!-- Close Button (Hidden - click outside to close) -->
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
