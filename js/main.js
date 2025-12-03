@@ -196,19 +196,23 @@ function displaySavedDailyMessage() {
 }
 
 /**
- * Display a message with fade-in animation
+ * Display a message with reveal animation
  */
 function displayMessage(elementId, message) {
   const messageElement = document.getElementById(elementId);
+
+  // Remove reveal class if it exists
+  messageElement.classList.remove("reveal");
 
   // Fade out
   messageElement.style.opacity = "0";
 
   setTimeout(() => {
     messageElement.textContent = message;
-    // Fade in
+    // Fade in with reveal animation
     messageElement.style.transition = "opacity 0.5s ease-in";
     messageElement.style.opacity = "1";
+    messageElement.classList.add("reveal");
   }, 300);
 }
 

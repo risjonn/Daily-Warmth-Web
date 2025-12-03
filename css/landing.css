@@ -6,10 +6,16 @@
   align-items: center;
   padding: 2rem 1rem;
   background: linear-gradient(
-    135deg,
-    var(--light-green) 0%,
-    var(--light-pink) 100%
-  );
+      135deg,
+      rgba(67, 81, 73, 0.85) 0%,
+      /* Increase opacity to 0.85-0.95 */ rgba(41, 27, 32, 0.85) 100%
+    ),
+    url(../assets/images/background_image.JPG);
+  background-size: 150px auto;
+  background-position: center;
+  background-repeat: repeat;
+  position: relative;
+  overflow: hidden;
 }
 
 /* Content wrapper - centers everything */
@@ -23,15 +29,44 @@
   width: 100%;
 }
 
-/* Welcome text styling */
+/* Welcome text styling - Bold and eye-catching */
 .welcome-text {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: var(--dark-green-text);
+  font-size: 4.5rem;
+  font-weight: 900;
   text-align: center;
-  margin-bottom: 0;
-  letter-spacing: -1px;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--dark-green) 0%,
+    #5fb069 20%,
+    var(--dark-pink) 50%,
+    #ff8ba7 80%,
+    var(--dark-green) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 12px rgba(111, 191, 115, 0.3);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1))
+    drop-shadow(0 8px 16px rgba(255, 155, 179, 0.2));
+  text-transform: uppercase;
   animation: fadeIn 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
+/* Tagline styling */
+.tagline {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--dark-pink-text);
+  text-align: center;
+  margin: 0;
+  font-family: "Caveat", cursive;
+  animation: fadeIn 1s ease-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
 }
 
 /* Illustration wrapper with animation */
@@ -39,7 +74,7 @@
   width: 100%;
   max-width: 300px;
   margin: 1rem 0;
-  animation: bounce 2s ease-in-out infinite;
+  animation: gentle-float 3s ease-in-out infinite;
 }
 
 .cat-illustration {
@@ -53,11 +88,44 @@
   margin-top: 1rem;
   font-size: 2rem;
   padding: 1rem 3rem;
-  animation: fadeIn 1s ease-out;
-  animation-delay: 0.3s;
+  animation: fadeIn 1s ease-out, pulse 2s ease-in-out infinite;
+  animation-delay: 0.3s, 1.5s;
   animation-fill-mode: both;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 8px 20px rgba(255, 155, 179, 0.4),
+    0 4px 10px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Glossy overlay effect */
+.enter-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  animation: shine 2.5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
 }
 
 /* Button hover effect - disabled on mobile, enabled on desktop */
@@ -71,79 +139,156 @@
 
 .enter-btn:active {
   transform: scale(0.98);
+  box-shadow: 0 4px 10px rgba(255, 155, 179, 0.4), 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   FLOATING HEARTS DECORATION
+   ============================================ */
+
+.floating-hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.heart {
+  position: absolute;
+  font-size: 2.5rem;
+  color: var(--dark-pink);
+  opacity: 0;
+  animation: float-up 10s ease-in-out infinite;
+}
+
+.heart-1 {
+  left: 8%;
+  animation-delay: 0s;
+  font-size: 2rem;
+}
+
+.heart-2 {
+  left: 20%;
+  animation-delay: 2s;
+  font-size: 2.8rem;
+}
+
+.heart-3 {
+  left: 35%;
+  animation-delay: 1s;
+  font-size: 2.2rem;
+}
+
+.heart-4 {
+  right: 35%;
+  animation-delay: 3s;
+  font-size: 3rem;
+}
+
+.heart-5 {
+  right: 20%;
+  animation-delay: 5s;
+  font-size: 2.4rem;
+}
+
+.heart-6 {
+  right: 8%;
+  animation-delay: 7s;
+  font-size: 2rem;
+}
+
+.heart-7 {
+  left: 50%;
+  animation-delay: 4s;
+  font-size: 2.6rem;
+}
+
+.heart-8 {
+  right: 45%;
+  animation-delay: 6s;
+  font-size: 2.3rem;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Content layer above hearts */
+.landing-content {
+  position: relative;
+  z-index: 1;
 }
 
 /* ============================================
    RESPONSIVE DESIGN - MOBILE OPTIMIZATIONS
    ============================================ */
 
-/* Extra small phones (320px - 375px) */
-@media (max-width: 375px) {
-  .welcome-text {
-    font-size: 2.8rem;
-  }
-
-  .illustration-wrapper {
-    max-width: 250px;
-  }
-
-  .enter-btn {
-    font-size: 1.6rem;
-    padding: 1rem 2.5rem;
-  }
-}
-
-/* Small phones (376px - 480px) */
-@media (min-width: 376px) and (max-width: 480px) {
-  .welcome-text {
-    font-size: 3rem;
-  }
-
-  .illustration-wrapper {
-    max-width: 280px;
-  }
-}
-
-/* Medium phones (481px - 600px) */
-@media (min-width: 481px) and (max-width: 600px) {
-  .welcome-text {
-    font-size: 3.5rem;
-  }
-
-  .illustration-wrapper {
-    max-width: 320px;
-  }
-
-  .enter-btn {
-    font-size: 2.2rem;
-    padding: 1.3rem 4rem;
-  }
-}
-
-/* Landscape mode optimization */
-@media (max-height: 600px) and (orientation: landscape) {
+/* Mobile phones (max-width: 480px) */
+@media (max-width: 480px) {
   .landing-container {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
   }
 
   .landing-content {
-    gap: 1rem;
+    gap: 1.5rem;
+    max-width: 28rem;
   }
 
   .welcome-text {
-    font-size: 2.5rem;
-    margin-bottom: 0;
+    font-size: 3rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .tagline {
+    font-size: 1.3rem;
   }
 
   .illustration-wrapper {
-    max-width: 200px;
+    max-width: 15rem;
     margin: 0.5rem 0;
   }
 
   .enter-btn {
-    font-size: 1.5rem;
-    padding: 0.8rem 2.5rem;
+    font-size: 1.6rem;
+    padding: 0.875rem 2.5rem;
     margin-top: 0.5rem;
+    box-shadow: 0 0.5rem 1.25rem rgba(255, 155, 179, 0.4),
+      0 0.25rem 0.625rem rgba(0, 0, 0, 0.15),
+      inset 0 0.0625rem 0 rgba(255, 255, 255, 0.4);
+  }
+
+  .enter-btn:active {
+    box-shadow: 0 0.25rem 0.625rem rgba(255, 155, 179, 0.4),
+      0 0.125rem 0.3125rem rgba(0, 0, 0, 0.15);
+  }
+
+  .heart {
+    font-size: 2rem;
+  }
+
+  .heart-2,
+  .heart-4 {
+    font-size: 2.3rem;
+  }
+
+  .heart-7 {
+    font-size: 2.1rem;
   }
 }
 
@@ -163,7 +308,7 @@
 
 .illustration-wrapper {
   animation: fadeIn 0.8s ease-out 0.3s forwards,
-    bounce 2s ease-in-out 1s infinite;
+    gentle-float 3s ease-in-out 1s infinite;
 }
 
 .enter-btn {
