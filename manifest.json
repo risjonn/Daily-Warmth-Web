@@ -1,0 +1,17 @@
+{
+  "name": "Daily Warmth",
+  "short_name": "Daily Warmth",
+  "description": "Your daily comfort message",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#6FBF73",
+  "theme_color": "#6FBF73",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/images/icon_image.JPG",
+      "sizes": "1200x1800",
+      "type": "image/jpeg"
+    }
+  ]
+}
