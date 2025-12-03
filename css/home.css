@@ -46,6 +46,48 @@
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
+/* Logout Button */
+.logout-btn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 155, 179, 0.25);
+  backdrop-filter: blur(8px);
+  color: var(--dark-pink);
+  border: 2px solid rgba(255, 155, 179, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.logout-btn:hover {
+  background-color: rgba(255, 155, 179, 0.45);
+  border-color: var(--dark-pink);
+  color: white;
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px rgba(255, 155, 179, 0.4);
+}
+
+.logout-btn:active {
+  transform: scale(0.95);
+}
+
+.logout-btn i {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.logout-btn:hover i {
+  transform: translateX(2px);
+}
+
 /* Decorative Cat (Top Right of Message Display) */
 .cat-decoration {
   position: absolute;
@@ -466,6 +508,17 @@
 
 /* Mobile phones (max-width: 480px) */
 @media (max-width: 480px) {
+  .logout-btn {
+    top: 0.8rem;
+    right: 0.8rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .logout-btn i {
+    font-size: 1rem;
+  }
+
   .page-title {
     font-size: 1.7rem;
   }

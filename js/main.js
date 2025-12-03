@@ -228,6 +228,12 @@ function initializeButtons() {
   const generateBtn = document.getElementById("generateBtn");
   generateBtn.addEventListener("click", handleGenerateMessage);
 
+  // Logout Button
+  const logoutBtn = document.getElementById("logoutBtn");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", handleLogout);
+  }
+
   // Fox Clickable
   const foxClickable = document.getElementById("foxClickable");
   if (foxClickable) {
@@ -241,6 +247,20 @@ function initializeButtons() {
       closeComfortModal();
     }
   });
+}
+
+/**
+ * Handle logout button click
+ */
+function handleLogout() {
+  // Clear authentication
+  localStorage.removeItem(CONFIG.AUTH_KEY);
+
+  // Redirect to landing page with page transition
+  document.body.classList.add("page-exit");
+  setTimeout(() => {
+    window.location.href = "index.html";
+  }, 400);
 }
 
 /**
